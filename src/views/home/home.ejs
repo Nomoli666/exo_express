@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <meta
+    name = "viewport"
+    content = "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+
+  <link
+    href = "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel = "stylesheet"
+  >
+
+  <title>Travel Agency</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href = "vendor/bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel = "stylesheet" href = "assets/css/fontawesome.css">
+  <link rel = "stylesheet" href = "assets/css/templatemo-villa-agency.css">
+  <link rel = "stylesheet" href = "assets/css/owl.css">
+  <link rel = "stylesheet" href = "assets/css/animate.css">
+  <link rel = "stylesheet" href = "https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+</head>
+<body>
+<!-- ***** Preloader Start ***** -->
+<div id = "js-preloader" class = "js-preloader">
+  <div class = "preloader-inner">
+    <span class = "dot"></span>
+    <div class = "dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+<!-- ***** Header Area Start ***** -->
+<%- include("../components/header") -%>
+<!-- ***** Header Area End ***** -->
+
+<div class = "main-banner">
+  <div class = "owl-carousel owl-banner">
+    <% for ( let i = 0; i < 3; i++){ %>
+      <div class = "item item-<%= i + 1; %>">
+        <div class = "header-text">
+          <span class = "category"><%= destination[i].name; %> <em><%= destination[i].country; %>></em></span>
+          <h2><%= destination[i].description; %></h2>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<div class = "featured section">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-lg-4">
+        <div class = "left-image">
+          <img src = "assets/images/featured.jpg" alt = "">
+          <a href = "property-details.ejs"><img
+              src = "assets/images/featured-icon.png" alt = "" style = "max-width: 60px; padding: 0px;"
+            ></a>
+        </div>
+      </div>
+      <div class = "col-lg-5">
+        <div class = "section-heading">
+          <h6>| Featured</h6>
+          <h2><%= destination[3].name; %>, <%= destination[3].country; %></h2>
+        </div>
+        <div class = "accordion" id = "accordionExample">
+          <div class = "accordion-item">
+            <h2 class = "accordion-header" id = "headingOne">
+              <button
+                class = "accordion-button" type = "button" data-bs-toggle = "collapse" data-bs-target = "#collapseOne"
+                aria-expanded = "true" aria-controls = "collapseOne"
+              >
+                Meilleurs plans ?
+              </button>
+            </h2>
+            <div
+              id = "collapseOne" class = "accordion-collapse collapse show" aria-labelledby = "headingOne"
+              data-bs-parent = "#accordionExample"
+            >
+              <div class = "accordion-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto assumenda dolor eaque error
+                   excepturi natus nemo obcaecati odit, possimus, qui quidem unde velit veritatis voluptas.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur deleniti, dignissimos,
+                   distinctio est, ex ipsa numquam provident reprehenderit tempora tenetur unde? Aut, ducimus, sapiente.
+                   Doloribus eos eum itaque laboriosam nobis, ratione rem repellat voluptate! Error id iusto neque
+                   velit?</p>
+              </div>
+            </div>
+          </div>
+          <div class = "accordion-item">
+            <h2 class = "accordion-header" id = "headingTwo">
+              <button
+                class = "accordion-button collapsed" type = "button" data-bs-toggle = "collapse"
+                data-bs-target = "#collapseTwo" aria-expanded = "false" aria-controls = "collapseTwo"
+              >
+                Que faire ?
+              </button>
+            </h2>
+            <div
+              id = "collapseTwo" class = "accordion-collapse collapse" aria-labelledby = "headingTwo"
+              data-bs-parent = "#accordionExample"
+            >
+              <div class = "accordion-body">
+                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt
+                ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </div>
+            </div>
+          </div>
+          <div class = "accordion-item">
+            <h2 class = "accordion-header" id = "headingThree">
+              <button
+                class = "accordion-button collapsed" type = "button" data-bs-toggle = "collapse"
+                data-bs-target = "#collapseThree" aria-expanded = "false" aria-controls = "collapseThree"
+              >
+                Où séjourner ?
+              </button>
+            </h2>
+            <div
+              id = "collapseThree" class = "accordion-collapse collapse" aria-labelledby = "headingThree"
+              data-bs-parent = "#accordionExample"
+            >
+              <div class = "accordion-body">
+                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt
+                ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "col-lg-3">
+        <div class = "info-table">
+          <ul>
+            <li>
+              <img src = "assets/images/info-icon-01.png" alt = "" style = "max-width: 52px;">
+              <h4>Favoris<br><span>Nos meilleures adresses</span></h4>
+            </li>
+            <li>
+              <img src = "assets/images/info-icon-02.png" alt = "" style = "max-width: 52px;">
+              <h4>Parcours<br><span>Balades sportives</span></h4>
+            </li>
+            <li>
+              <img src = "assets/images/info-icon-03.png" alt = "" style = "max-width: 52px;">
+              <h4>Guides<br><span>Meilleures visites guidées</span></h4>
+            </li>
+            <li>
+              <img src = "assets/images/info-icon-04.png" alt = "" style = "max-width: 52px;">
+              <h4>Restaurants<br><span>La gastronomie locale</span></h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "video section">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-lg-4 offset-lg-4">
+        <div class = "section-heading text-center">
+          <h6>| Videos </h6>
+          <h2>Des points de vues exceptionnels</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "video-content">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-lg-10 offset-lg-1">
+        <div class = "video-frame">
+          <iframe
+            width = "500" height = "250" src = "https://www.youtube.com/embed/b83lxWz_se4"
+            title = "DRONE footage | Iguazu Falls"
+            frameborder = "0"
+            allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy = "strict-origin-when-cross-origin" allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ***** Footer Area Start ***** -->
+<%- include("../components/footer") -%>
+<!-- ***** Footer Area End ***** -->
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src = "vendor/jquery/jquery.min.js"></script>
+<script src = "vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src = "assets/js/isotope.min.js"></script>
+<script src = "assets/js/owl-carousel.js"></script>
+<script src = "assets/js/counter.js"></script>
+<script src = "assets/js/custom.js"></script>
+</body>
+</html>
