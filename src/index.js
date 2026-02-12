@@ -5,6 +5,7 @@ import db from './database/index.js';
 import homeRouter from './routers/home.router.js';
 import destinationRouter from './routers/destination.router.js';
 import activityRouter from './routers/activity.router.js';
+import formRouter from './routers/form.router.js';
 
 //SERVER
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.static('public'));
 app.use('/', homeRouter);
 app.use('/destinations', destinationRouter)
 app.use('/activities', activityRouter);
+app.use('/form', formRouter);
 
 
 app.get('/', (req, res) => {
