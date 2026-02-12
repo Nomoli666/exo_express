@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
 import db from './database/index.js';
@@ -14,18 +14,18 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
 app.use(express.static('public'));
-//routes
-app.use('/', homeRouter);
-app.use('/destinations', destinationRouter)
-app.use('/activities', activityRouter);
-app.use('/form', formRouter);
-
-
-app.get('/', (req, res) => {
-  res.status(200).json('Working');
-});
 
 app.use(morgan('tiny'));
+app.use(express.urlencoded({extended: true}));
+
+//routes
+// app.get('/', (req, res) => {
+//   res.status(200).json('Working');
+// });
+app.use('/', homeRouter);
+app.use('/destinations', destinationRouter);
+app.use('/activities', activityRouter);
+app.use('/form', formRouter);
 
 app.use((err, req, res, next) => {
   console.log(`💩✨--${err.message}--✨💩)`);

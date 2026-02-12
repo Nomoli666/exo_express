@@ -28,6 +28,12 @@ const activityController = {
     }
     res.status(200).send(`Destination ${activities}`);
   },
+
+  create: (req, res) => {
+    res.status(200).render('./activities/create', {
+    });
+  }
 };
+
 
 export default activityController;

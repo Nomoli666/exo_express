@@ -57,37 +57,22 @@
 </div>
 
 <div class = "section properties">
-  <div class="input-container">
-    <input class = "input" type = "text">
-    <button class = "input-button">Chercher</button>
-  </div>
+  <form method = "get">
+    <div class = "input-container">
+      <label for = "name">Destination</label>
+      <input class = "input" type = "text" id = "name" name = "name">
+      <button type = "submit" class = "input-button">Chercher</button>
+    </div>
+    <div class = "input-container">
+      <label for = "country">Pays</label>
+      <input class = "input" type = "text" id = "country" name = "country">
+      <button type = "submit" class = "input-button">Chercher</button>
+    </div>
+  </form>
   <div class = "container">
-    <ul class = "properties-filter">
-      <li>
-        <a class = "is_active" href = "#!" data-filter = "*">Show All</a>
-      </li>
-      <li>
-        <a href = "#!" data-filter = ".adv">Europe</a>
-      </li>
-      <li>
-        <a href = "#!" data-filter = ".str">Asie</a>
-      </li>
-      <li>
-        <a href = "#!" data-filter = ".rac">Afrique</a>
-      </li>
-      <li>
-        <a href = "#!" data-filter = ".rac">Amérique du Nord</a>
-      </li>
-      <li>
-        <a href = "#!" data-filter = ".rac">Amérique du Sud</a>
-      </li>
-      <li>
-        <a href = "#!" data-filter = ".rac">Océanie</a>
-      </li>
-    </ul>
     <div class = "row properties-box">
       <% destinations.forEach(item => { %>
-      <%- include("../components/cards", {item}) %>
+        <%- include("../components/cards", {item}) %>
       <% }); %>
     </div>
     <div class = "row">
