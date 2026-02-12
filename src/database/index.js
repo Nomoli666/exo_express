@@ -10,7 +10,7 @@ Activity.belongsTo(Destination, {
 });
 
 Destination.hasMany(Activity, {
-  as: 'activity',
+  as: 'activities',
   foreignKey: 'destinationId',
 });
 export default {sequelize, Destination, Activity};

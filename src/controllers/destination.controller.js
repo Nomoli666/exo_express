@@ -5,7 +5,6 @@ const destinationController = {
 
   listing: async (req, res) => {
     const destinations = await destinationService.getAllDestinations();
-    console.log(`(👉ﾟヮﾟ)👉  👈(ﾟヮﾟ👈)`);
     res.status(200).render('./destinations/listing', {
       destinations: destinations,
     });

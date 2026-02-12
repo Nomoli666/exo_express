@@ -89,6 +89,7 @@
           <h6><%= dest.country ;%>></h6>
           <h4><a href = "/destinations/<%=dest.id%>"><%= dest.name ;%></a></h4>
           <p><%= dest.description ;%></p>
+          <p>Activités : <%=dest.activities.length%></p>
           <div class = "main-button">
             <a href = "/destinations/<%=dest.id%>">Réserver</a>
           </div>
