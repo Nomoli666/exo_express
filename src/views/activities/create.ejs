@@ -55,6 +55,10 @@
         <div class = "row">
           <div class = "col-lg-12">
 
+            <% if (err) { %>
+            <p><%= err ;%></p>
+            <% } %>
+
             <label for = "name">Nom de l'Activité</label>
             <input
               type = "name" name = "name" id = "name" placeholder = "Nom..."
@@ -63,17 +67,13 @@
           </div>
           <div class = "col-lg-12">
 
-<!--            <label for="destinationId">Nom de la Destination Associée</label>-->
-
-<!--            <select name="destinationId" id="destinationId">-->
-<!--              <option value="">&#45;&#45;Veuillez choisir une option&#45;&#45;</option>-->
-<!--              <option value="dog">Chien</option>-->
-<!--            </select>-->
-
-            <label for = "destinationId">Nom de la Destination Associée</label>
-            <input
-              type = "text" name = "descriptionId" id = "destinationId" placeholder = "Destination..."
-            >
+            <label for = "destinationId">Nom de la Destination Associée </label>
+            <select name = "destinationId" id = "destinationId">
+              <option value = "">--Veuillez choisir une option--</option>
+              <% destinations.forEach(dest => { %>
+              <option value = "<%= dest.id ;%>"><%= dest.name ;%></option>
+              <% }); %>
+            </select>
 
           </div>
           <div class = "col-lg-12">

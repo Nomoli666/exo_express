@@ -1,7 +1,8 @@
 import db from '../database/index.js';
 
 const getAllActivities = async () => {
-  const activities = await db.Activity.findAll({});
+  const activities = await db.Activity.findAll({
+  });
   return activities;
 };
 

@@ -1,4 +1,5 @@
 import activityService from '../services/activity.service.js';
+import destinationService from '../services/destination.service.js';
 
 const activityController = {
 
@@ -29,10 +30,27 @@ const activityController = {
     res.status(200).send(`Destination ${activities}`);
   },
 
-  create: (req, res) => {
+  create: async (req, res) => {
+    const destinations = await destinationService.getAllDestinations();
     res.status(200).render('./activities/create', {
+      err: null,
+      destinations: destinations,
     });
-  }
+  },
+
+  createSubmit: async (req, res) => {
+    try {
+      const activities = await activityService.createActivity(req.body);
+    } catch (err) {
+      const destinations = await destinationService.getAllDestinations();
+      res.status(400).render('./activities/create', {
+        destinations: destinations,
+        err: err.message,
+      });
+      return;
+    }
+    res.redirect('/activities');
+  },
 };
 
 
